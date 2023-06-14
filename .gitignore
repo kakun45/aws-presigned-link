@@ -1,0 +1,6 @@
+*.env
+main.py
+amazon-ses-sample.py
+*.json
+
+/node_modules

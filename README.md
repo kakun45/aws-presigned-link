@@ -1,4 +1,6 @@
 # AWS Video Clip Download
+## Author - Xeniya Shoiko, All rights reserved.
+
 This project is a solution to a take-home assignment that involves utilizing my knowledge of AWS services to implement a secure video clip download system. And was built purely to satisfy my AWS curiosity!
 ![Screen Shot of one button UI](https://github.com/kakun45/aws-presigned-link/assets/53381916/58af35b4-f652-4d64-9639-0f1ccea488bd)
 

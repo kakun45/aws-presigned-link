@@ -1,3 +1,7 @@
+require("dotenv").congig();
+
+const api_gateway = process.env.API_GATEWAY;
+
 document.addEventListener("DOMContentLoaded", function () {
   // JavaScript code being executed before the HTML document finishes loading. This results in the getElementsByClassName method returning undefined,
   // and subsequently, the addEventListener method cannot be called on it, wrapping code inside a DOMContentLoaded event
@@ -23,18 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("A Download was requested");
     // Make an AJAX request to AWS Lambda function
     let xhr = new XMLHttpRequest();
-    // the link here is correct
-    xhr.open(
-      "POST",
-      "https://4bkjo915q8.execute-api.us-east-2.amazonaws.com/default/test_AI_assistant",
-      true
-    );
+    xhr.open("POST", api_gateway, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status === 200) {
         console.log(xhr.responseText);
-        // Display success message to the user
         alert("Download request was successful!");
       } else if (xhr.status === 401 && !isUnauthorizedAlertShown) {
         // Unauthorized response
@@ -65,32 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("A Download was requested");
 
     try {
-      const response = await fetch(
-        "https://4bkjo915q8.execute-api.us-east-2.amazonaws.com/default/test_AI_assistant",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: email }),
-        }
-      );
+      const response = await fetch(api_gateway, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email }),
+      });
 
       if (response.ok) {
         console.log(await response.json());
-        // Display success message to the user
         alert("Download request successful!");
       } else if (response.status === 401) {
-        // Unauthorized response
         alert(
           "You are not authorized to access this resource. Check the spelling of the email"
         );
       }
-      // else {
-      //   console.log(await response.text());
-      //   // Other error responses
-      //   alert("An error occurred. Please try again later.");
-      // }
     } catch (error) {
       console.error(error);
       alert("An Error occures. Pls try again later");

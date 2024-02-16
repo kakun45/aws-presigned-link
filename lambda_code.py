@@ -96,7 +96,9 @@ def lambda_get_link(bucket_name='xs-take-home-assign', key_filename='murder-myst
     print("===")
     print(url)
     print("===")
-    lambda_send_email(url, expires_in)
+    # Assuming the user flow exists
+    recipient = EMAIL_USER
+    lambda_send_email(url, expires_in, recipient)
     print(f'Attempt to send an Email was made at: {datetime.now()}')
     return {
         'statusCode': 200,

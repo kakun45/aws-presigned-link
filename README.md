@@ -53,6 +53,6 @@ To implement this solution, I broke it down into the following steps:
 - Optionally, I added an expiration time to the download link to make it expire after a certain period (e.g., 24 hours).
 
 ## Conclusion
-This take-home assignment utilizes AWS services such as S3, SES, and Lambda to implement a secure video clip download system. By following the outlined steps and customizing the solution based on specific requirements, I can create a functional system that allows authorized recipients to securely download videos. I remembered to consider security best practices and implemented necessary measures to protect the video clips and ensure that only authorized individuals can access them.
+This take-home assignment, which required quick self-study to figure out, utilizes AWS services such as S3, SES, and Lambda to implement a secure video clip download system. By following the outlined steps and customizing the solution based on specific requirements, I can create a functional system that allows authorized recipients to securely download videos. I remembered to consider security best practices and implemented necessary measures to protect the video clips and ensure that only authorized individuals can access them.
 
-My implementation is deployed at https://aws-presigned-link.vercel.app/  All Rights Reserved. Xeniya Shoiko
+All Rights Reserved. Xeniya Shoiko
